@@ -1,20 +1,29 @@
 public class Entrada {
     //Atributo
-    private double precio;
+    private boolean valida;
 
     //constructor
 
-    public Entrada(double precio) {
-        this.precio = precio;
+    public Entrada(boolean valida) {
+        this.valida = valida;
     }
+
 
     //get y set
 
-    public double getPrecio() {
-        return precio;
+
+    public boolean isValida() {
+        return valida;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setValida(boolean valida) {
+        this.valida = valida;
+    }
+
+    @Override
+    public String toString() {
+        return "Entrada{" +
+                ", valida=" + valida +
+                '}';
     }
 }

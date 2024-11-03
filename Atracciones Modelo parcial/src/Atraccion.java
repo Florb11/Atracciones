@@ -30,7 +30,7 @@ abstract class Atraccion {
         this.edadPermitida = edadPermitida;
     }
 
-    public abstract void verificarRequisitos(Visitante visitante);
+    public abstract boolean verificarRequisitos(Visitante visitante);
 
 
 }

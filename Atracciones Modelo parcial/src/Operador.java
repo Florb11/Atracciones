@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Operador {
     //Atributos
     private String nombre;
@@ -25,7 +27,12 @@ public class Operador {
                 "nombre='" + nombre + '\'' +
                 '}';
     }
-    public void verificarAcceso(Visitante visitante){
-        if(visitante.getEntrada())
+    public void verificarAcceso(Visitante visitante,Atraccion atraccion){
+        if(visitante.getEntrada().isValida()){
+            JOptionPane.showMessageDialog(null,"La entrada es valida");
+            atraccion.verificarRequisitos(visitante);
+        }else{
+            JOptionPane.showMessageDialog(null,"Comprate una entrada primero che!!");
+        }
     }
 }

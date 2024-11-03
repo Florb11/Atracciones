@@ -23,13 +23,16 @@ public class MontaniaRusa extends Atraccion{
     }
 
     @Override
-    public void verificarRequisitos(Visitante visitante) {
+    public boolean verificarRequisitos(Visitante visitante) {
         if(visitante.getEdad()< this.getEdadPermitida()){
             JOptionPane.showMessageDialog(null,"Debe ser mayor de 16 para ingresar a la Montaña rusa");
+            return false;
         }else if (visitante.getAltura() < this.alturaMin){
             JOptionPane.showMessageDialog(null,"Requisito minimo de altura: "+ this.alturaMin + "\n" + "NO PUEDE INGRESAR");
+            return false;
         }else{
             JOptionPane.showMessageDialog(null,"Puede ingresar! Disfruteee");
+            return true;
         }
     }
 

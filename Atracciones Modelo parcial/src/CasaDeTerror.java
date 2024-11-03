@@ -22,14 +22,16 @@ public class CasaDeTerror extends Atraccion {
     }
 
     @Override
-    public void verificarRequisitos(Visitante visitante) {
+    public boolean verificarRequisitos(Visitante visitante) {
         if(visitante.getEdad()< this.getEdadPermitida()){
             JOptionPane.showMessageDialog(null,"Debe ser mayor de edad para ingresar a la Casa del terror");
+            return false;
         }else if (!visitante.isEstadoSalud() && this.tieneEfectosEspeciales){
             JOptionPane.showMessageDialog(null,"Esta atraccion no se recomienda para personas con problemas de salud");
-
+            return false;
         }else{
             JOptionPane.showMessageDialog(null,"Puede ingresar! Disfruteee");
+            return true;
         }
     }
 }

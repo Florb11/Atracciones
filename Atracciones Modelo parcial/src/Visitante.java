@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Visitante {
     //Atributos
     private int edad;
@@ -48,4 +50,13 @@ public class Visitante {
     public void setEntrada(Entrada entrada) {
         this.entrada = entrada;
     }
+    public void comprarEntrada(){
+        if(this.entrada == null){
+            this.entrada = new Entrada(true);
+            JOptionPane.showMessageDialog(null,"Entrada comprada con exito");
+        }else{
+            JOptionPane.showMessageDialog(null,"Ya tenes entrada");
+        }
+    }
+
 }
